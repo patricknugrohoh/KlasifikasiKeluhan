@@ -57,7 +57,7 @@ def classify(vector_tweet, vec_option, model_option):
         classifier = load_model('../model/svm/svm{}.joblib'.format(vec_option))
     elif model_option == 3:
         classifier = load_model('../model/mlp/mlp{}.joblib'.format(vec_option))
-    return classifier.predict(vector_tweet) == 1
+    return classifier.predict(vector_tweet)
 
 def cek_keluhan(tweet, vec_option, model_option):
     vector_tweet = vectorize([tweet], vec_option)

@@ -17,7 +17,8 @@ def index():
         tweet = preprocess_twitter(text)
         for i in range(3):
             is_keluhan = cek_keluhan(tweet, vec_option, i + 1)
-            keluhan.append('ya' if is_keluhan else 'bukan')
+            option = ['Keluhan', 'Respon', 'Other']
+            keluhan.append(option[int(is_keluhan) - 1])
 
         keluhans = []
         keluhans.append(keluhan)
